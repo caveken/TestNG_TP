@@ -3,7 +3,7 @@ package tests.day16;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
-import utilities.utilities.TestBaseBeforeClassAfterClass;
+import utilities.TestBaseBeforeClassAfterClass;
 
 public class C04_DependsOnMethod extends TestBaseBeforeClassAfterClass {
     @Test

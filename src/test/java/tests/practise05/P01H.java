@@ -1,8 +1,8 @@
-package practise05;
+package tests.practise05;
 
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
-import utilities.utilities.TestBaseBeforeMethodAfterMethod;
+import utilities.TestBaseBeforeMethodAfterMethod;
 
 public class P01H extends TestBaseBeforeMethodAfterMethod {
     // ...Exercise3...

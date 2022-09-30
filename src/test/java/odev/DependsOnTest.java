@@ -1,7 +1,7 @@
 package odev;
 
 import org.testng.annotations.Test;
-import utilities.utilities.TestBaseBeforeMethodAfterMethod;
+import utilities.TestBaseBeforeMethodAfterMethod;
 
 public class DependsOnTest extends TestBaseBeforeMethodAfterMethod {
     @Test

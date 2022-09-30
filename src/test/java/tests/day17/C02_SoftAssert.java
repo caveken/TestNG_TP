@@ -3,10 +3,9 @@ package tests.day17;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import utilities.utilities.TestBaseBeforeMethodAfterMethod;
+import utilities.TestBaseBeforeMethodAfterMethod;
 
 public class C02_SoftAssert extends TestBaseBeforeMethodAfterMethod {
     @Test
