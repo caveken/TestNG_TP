@@ -11,12 +11,9 @@ import org.openqa.selenium.opera.OperaDriver;
 import java.time.Duration;
 
 public class Driver {
-    private Driver() {//POM'de Driver class'indaki getDriver()'nin obje olusturularak kullanilmasini engellemek icin
-        //Singleton pattern kullanimi benimsenmistir.
+    private Driver(){
     }
-
     static WebDriver driver;
-
         /*
         Testlerimizi çalıştırdığımızda her seferinde yeni driver oluşturduğu için her test methodu
         için yeni bir pencere(driver) açıyor. Eğer driver'a bir değer atanmamışsa yani driver==null ise
@@ -24,24 +21,55 @@ public class Driver {
         çalıştığı için ve değer atandığı için null olmayacak ve direk return edecek ve diğer
         teslerimiz aynı pencere(driver) üzerinde çalışacak
          */
-
-
     public static WebDriver getDriver() {
         if (driver == null) {
-            switch (ConfigReader.getProperty("browser")) {
-                case "edge":
+            String browser = ConfigReader.getProperty("browser");
+            if ("edge".equals(browser)) {
+                WebDriverManager.edgedriver().setup();
+                driver = new EdgeDriver();
+            } else if ("firefox".equals(browser)) {
+                WebDriverManager.firefoxdriver().setup();
+                driver = new FirefoxDriver();
+            } else if ("opera".equals(browser)) {
+                WebDriverManager.operadriver().setup();
+                driver = new OperaDriver();
+            } else if ("headless-chrome".equals(browser)) {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
+            } else {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+            }
+            driver.manage().window().maximize();
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+        }
+        return driver;
+    }
+
+
+    public static WebDriver getDriver(String browser) {
+        //Eğer browser'a bir değer atanmamışsa properties dosyasın'daki browser çalışsın
+        browser = browser == null ? ConfigReader.getProperty("browser") : browser;
+
+        //Testlerimizi xml file'dan farklı browserlar ile çalıştırabilmek için getDriver() methoduna parametre
+        //atamamız gerekir.
+        if (driver == null) {
+            switch (browser){
+                //CrossBrowser için bizim gönderdiğimiz browser üzerinden çalışması için
+                //buraya parametre olarak girdiğimiz değeri yazdık
+                case "edge" :
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
                     break;
-                case "firefox":
-                    WebDriverManager.firefoxdriver().setup();
-                    driver = new FirefoxDriver();
+                case "chrome" :
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
                     break;
-                case "opera":
+                case "opera" :
                     WebDriverManager.operadriver().setup();
                     driver = new OperaDriver();
                     break;
-                case "headless-chrome":
+                case "headless-chrome" :
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     break;

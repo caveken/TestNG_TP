@@ -18,6 +18,13 @@ public class C03_Priority extends TestBaseBeforeMethodAfterMethod {
     public void amazonTest() {
         driver.get("https://www.amazon.com");
     }
+
+    @Test (priority = -1, groups = "gp1")
+    public void hepsiBuradaTest() {
+        driver.get("https://www.hepsiburada.com");
+    }
+
+
     /*
     Testelirimizi calistirirken istedigimiz siraya gore calismasini istersek
     @Test objesinin bulundugu yere prority() methodunu kullaniriz

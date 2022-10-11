@@ -1,4 +1,4 @@
-package tests.day17;
+package tests.day22;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.TestBaseBeforeMethodAfterMethod;
 
-public class C02_SoftAssert extends TestBaseBeforeMethodAfterMethod {
-    @Test
+public class C03_SoftAssert extends TestBaseBeforeMethodAfterMethod {
+    @Test(groups = "gp1")
     public void test01() {
         SoftAssert softAssert=new SoftAssert();
         //1-amazon anasayfaya gidin
