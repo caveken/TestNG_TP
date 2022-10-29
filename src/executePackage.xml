@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="belirli package çalstırma" verbose="3">
+    <test name="package">
+        <packages>
+            <package name="tests.practice06"></package>
+            <package name="tests.practice07"></package>
+        </packages>
+    </test>
+    <test name="ayrı class ekleme">
+        <classes>
+            <class name="tests.practice05.P01"></class>
+        </classes>
+    </test>
+</suite>

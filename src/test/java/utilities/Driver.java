@@ -11,7 +11,7 @@ import org.openqa.selenium.opera.OperaDriver;
 import java.time.Duration;
 
 public class Driver {
-    private Driver(){
+    private Driver(){//singleton pattern
     }
     static WebDriver driver;
         /*

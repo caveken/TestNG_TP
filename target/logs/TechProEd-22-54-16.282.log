@@ -1,0 +1,3 @@
+2022-10-15 22:54:16,278 INFO t.d.C01_ScreenShotReusableMethod [main] hepsi burada sitesine gidilir 
+2022-10-15 22:54:31,304 INFO t.d.C01_ScreenShotReusableMethod [main] ekran goruntusu alınır
+2022-10-15 22:54:31,666 WARN t.d.C01_ScreenShotReusableMethod [main] driver kapatılır

@@ -53,7 +53,7 @@ public class C01_DataProvider extends TestBaseRapor {
         String actualKelime=amazonPage.aramaSonucWE.getText();
         Assert.assertTrue(actualKelime.contains(kelimeler));
         extentTest.info(" //sonuclarin aradigimiz kelime icerdigini test edelim\n");
-        Driver.getDriver();
+        Driver.quitDriver();
         extentTest.pass("Aramayla ilgili ürünün (\"coklu\") görünür olduğu doğrulandı");
 
     }

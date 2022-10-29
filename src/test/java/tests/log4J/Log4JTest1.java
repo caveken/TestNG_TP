@@ -13,5 +13,6 @@ private static Logger logger= LogManager.getLogger(Log4JTest1.class.getName());
         logger.debug("LOG DEBUG");
         logger.error("LOG ERROR");
         logger.fatal(" LOG FATAL");
+        logger.warn("LOG WARN");
     }
 }

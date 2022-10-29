@@ -30,7 +30,7 @@ public class TestBaseRaporSablon extends TestBaseRapor{
         //
         //
 
-        extentTest.info("   // 11.       \n" +"//12.    ");
+        extentTest.info(" ");
         //
         //
 

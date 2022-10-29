@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="parallel test" verbose="3" parallel="classes" thread-count="3" >
+    <!--isteğe göre çalıstırılacak olan classları methodları tek tek tanımlamak yerine (smoke, end to end vb)
+    bu yöntem ile gruplayabiliriz
+    frameworkumüzden istediğimiz test methodlarını istediğimiz gruplara dahil edebilirz
+
+    bunu yapabilmek için öncelikle test methodlarımızı istediğimiz gruplara dahil eder
+    sonra xml dosyasına
+    hangi gruplar çalısacak
+    bu gruplar hangi package altında aranacak
+    -->
+    <test name="regression">
+        <packages>
+            <package name="tests.*"></package>
+        </packages>
+    </test>
+</suite>
